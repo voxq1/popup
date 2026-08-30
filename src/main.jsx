@@ -1508,7 +1508,7 @@ function Chatbot({ active }) {
           <div className="chatbot-messages" style={{ position: "relative" }}>
             {filteredMessages.map((message, index) => (
               <div className={`chat-message-line ${message.from}`} key={`${message.from}-${index}`}>
-                {message.from === "bot" && <img className="chatbot-avatar" src="/logo.png" alt="FrialsaBot" />}
+                {message.from === "bot" && <img className="chatbot-avatar" src={`${import.meta.env.BASE_URL}logo.png`} alt="FrialsaBot" />}
                 <div style={{ flex: 1 }}>
                   <div className={`chat-message ${message.from}`}>{message.text}</div>
                   <small style={{ fontSize: "8px", color: "#8997a3", marginTop: "3px", display: "block" }}>{message.timestamp}</small>
@@ -1517,7 +1517,7 @@ function Chatbot({ active }) {
             ))}
             {thinking && (
               <div className="chat-message-line bot">
-                <img className="chatbot-avatar" src="/logo.png" alt="FrialsaBot" />
+                <img className="chatbot-avatar" src={`${import.meta.env.BASE_URL}logo.png`} alt="FrialsaBot" />
                 <div className="chat-message bot thinking-message"><span>Pensando</span><i /><i /><i /></div>
               </div>
             )}
@@ -1666,7 +1666,7 @@ function App() {
     <div className={`app-shell ${settings.theme === "dark" ? "theme-dark" : ""}`}>
       <aside className={`sidebar ${menuOpen ? "open" : ""}`}>
         <div className="brand">
-          <img src="/logo.png" alt="Frialsa Logo" className="brand-mark" />
+          <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Frialsa Logo" className="brand-mark" />
           <div>
             FRIALSA
             <br />
